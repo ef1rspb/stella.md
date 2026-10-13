@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stella Aerospace</title>
+<meta name="description" content="Stella Aerospace — navigation for fixed-wing drones that keeps working without GNSS.">
+<meta property="og:title" content="Stella Aerospace">
+<meta property="og:description" content="Navigation for fixed-wing drones that keeps working when GNSS is jammed or spoofed.">
+<meta property="og:image" content="https://stella.md/team.jpg">
+<style>
+  :root {
+    --bg:#ffffff; --fg:#14181f; --muted:#5b6472; --accent:#1f5fbf; --accent-soft:#e8f0fc;
+    --line:#e3e7ee; --card:#f6f8fb;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg:#0f1318; --fg:#e8ecf2; --muted:#9aa4b2; --accent:#6ea8ff; --accent-soft:#16233a;
+      --line:#252c36; --card:#161b22;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg:#0f1318; --fg:#e8ecf2; --muted:#9aa4b2; --accent:#6ea8ff; --accent-soft:#16233a;
+    --line:#252c36; --card:#161b22;
+  }
+  * { box-sizing:border-box; }
+  html { -webkit-text-size-adjust:100%; }
+  body { margin:0; background:var(--bg); color:var(--fg);
+         font:17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  .wrap { max-width:880px; margin:0 auto; padding:0 16px; }
+
+  header { border-bottom:1px solid var(--line); }
+  header .wrap { display:flex; justify-content:space-between; align-items:center; height:60px; }
+  .brand { font-weight:700; letter-spacing:-0.2px; color:var(--fg); text-decoration:none; }
+  header nav a { color:var(--muted); text-decoration:none; font-size:15px; margin-left:20px; }
+  header nav a:hover { color:var(--fg); }
+
+  .hero { padding:72px 0 56px; }
+  .tag { display:inline-block; background:var(--accent-soft); color:var(--accent); font-size:13px;
+         font-weight:600; letter-spacing:0.4px; padding:4px 10px; border-radius:999px; margin-bottom:18px; }
+  h1 { font-size:clamp(32px, 6vw, 48px); line-height:1.1; letter-spacing:-1px; margin:0 0 18px; max-width:15em; }
+  .lead { font-size:20px; color:var(--muted); margin:0; max-width:36em; }
+
+  section { padding:40px 0; border-top:1px solid var(--line); }
+  h2 { font-size:13px; text-transform:uppercase; letter-spacing:1.2px; color:var(--accent); margin:0 0 16px; }
+  p { margin:0 0 14px; max-width:42em; }
+
+  .features { list-style:none; padding:0; margin:20px 0 0; display:grid;
+              grid-template-columns:repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap:12px; }
+  .features li { border-left:3px solid var(--accent); padding:4px 0 4px 14px; }
+
+  .stats { display:grid; grid-template-columns:repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap:12px; }
+  .stat { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; }
+  .stat .num { font-size:32px; font-weight:700; letter-spacing:-0.5px; line-height:1.2; }
+  .stat span { color:var(--muted); font-size:14px; }
+
+  .apps { display:flex; flex-wrap:wrap; gap:8px; margin-top:4px; }
+  .apps span { border:1px solid var(--line); border-radius:999px; padding:6px 14px; font-size:15px; }
+
+  a { color:var(--accent); }
+  .contact a { font-size:20px; font-weight:600; text-decoration:none; }
+
+  footer { border-top:1px solid var(--line); padding:40px 0 48px; color:var(--muted); font-size:14px; }
+  footer figure { margin:0 0 20px; }
+  footer img { display:block; width:100%; height:auto; border-radius:12px; }
+  footer figcaption { margin-top:8px; font-size:13px; }
+
+  @media (max-width:520px) {
+    header nav { display:none; }
+    .hero { padding:48px 0 40px; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="brand" href="#">Stella Aerospace</a>
+    <nav><a href="#product">Product</a><a href="#tests">Tests</a><a href="#contact">Contact</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <div class="tag">GNSS-independent navigation</div>
+    <h1>Fixed-wing drones that keep flying when GNSS fails</h1>
+    <p class="lead">A compact module that keeps fixed-wing aircraft on course when satellite navigation is jammed or spoofed.</p>
+  </div>
+
+  <section id="product">
+    <h2>What we build</h2>
+    <p>A compact add-on module for ArduPilot fixed-wing aircraft. A downward camera and an onboard
+    computer recognise the terrain below, match it against map imagery and send absolute position
+    fixes to the autopilot — without any satellite or radio signal. Between fixes, calibrated dead
+    reckoning keeps the aircraft on course.</p>
+    <ul class="features">
+      <li>Two independent matchers must agree before a fix is used — designed for zero false positions.</li>
+      <li>Works with the ArduPilot autopilot operators already use.</li>
+      <li>Works with any orthophoto or satellite imagery.</li>
+      <li>Cold start and launch without GNSS or radio link.</li>
+    </ul>
+  </section>
+
+  <section id="tests">
+    <h2>Flight-tested in 2026</h2>
+    <div class="stats">
+      <div class="stat"><div class="num">~45</div><span>logged test flights, Aug–Oct 2026</span></div>
+      <div class="stat"><div class="num">14 m</div><span>median fix error without GNSS</span></div>
+      <div class="stat"><div class="num">150 km</div><span>flown in GNSS-denied tests, including real jamming and spoofing</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Applications</h2>
+    <div class="apps">
+      <span>Border surveillance</span>
+      <span>Emergency response</span>
+      <span>Search and rescue</span>
+      <span>Power line and infrastructure inspection</span>
+      <span>Agricultural survey</span>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p><a href="mailto:ef1rspb@gmail.com">ef1rspb@gmail.com</a></p>
+    <p><a href="tel:+37368251271">+373 68 251 271</a></p>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <figure>
+      <img src="team.jpg" width="1280" height="960" loading="lazy"
+           alt="Stella Aerospace team in the field with three 3D-printed fixed-wing test aircraft">
+      <figcaption>Our team and test aircraft at the flight field.</figcaption>
+    </figure>
+    „Stella Aerospace” S.R.L. · IDNO 1026023046918 · Chișinău, Republic of Moldova
+  </div>
+</footer>
+</body>
+</html>
