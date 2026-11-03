@@ -73,6 +73,9 @@
   footer figure { margin:0 0 20px; }
   footer img { display:block; width:100%; height:auto; border-radius:12px; }
   footer figcaption { margin-top:8px; font-size:13px; }
+  .footer-row { display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px 24px; }
+  .footer-row a { color:var(--muted); text-decoration:none; }
+  .footer-row a:hover { color:var(--fg); }
 
   @media (max-width:520px) {
     header nav { display:none; }
@@ -143,7 +146,10 @@
            alt="Stella Aerospace team in the field with three 3D-printed fixed-wing test aircraft">
       <figcaption>Our team and test aircraft at the flight field.</figcaption>
     </figure>
-    „Stella Aerospace” S.R.L. · IDNO 1026023046918 · Chișinău, Republic of Moldova
+    <div class="footer-row">
+      <span>„Stella Aerospace” S.R.L. · IDNO 1026023046918 · Chișinău, Republic of Moldova</span>
+      <a href="mailto:info@stella.md">info@stella.md</a>
+    </div>
   </div>
 </footer>
 </body>
